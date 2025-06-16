@@ -1,0 +1,463 @@
+:root {
+    /* Cores */
+    --verde-agrinho: #2e7d32;
+    --verde-claro: #8bc34a;
+    --terra: #795548;
+    --laranja: #ff9800;
+    --destaque: #ff5722;
+    --creme: #fff8e1;
+    --branco: #ffffff;
+    --cinza-claro: #f5f5f5;
+    --cinza-texto: #333333;
+    
+    /* Bordas */
+    --borda-card: 3px solid var(--laranja);
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--cinza-texto);
+    background-color: var(--creme);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--verde-agrinho), var(--verde-claro));
+    color: var(--branco);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 60px;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2));
+}
+
+.header h1 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Hero Banner */
+.hero-banner {
+    background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(43, 101, 47, 0.8)), 
+                url('assets/images/hero-bg.jpg') no-repeat center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--branco);
+}
+
+.hero-text h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* --- Seção de Eventos --- */
+.events-section {
+    padding: 4rem 0;
+    background-color: var(--cinza-claro);
+    text-align: center;
+}
+
+.events-section h2 {
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: var(--cinza-texto);
+}
+
+/* Contêiner dos Cards de Evento (layout fixo 3x2) */
+.event-carousel {
+    /* Largura máxima calculada para 3 cards de 300px e 2 gaps de 20px: (3*300) + (2*20) = 940px */
+    max-width: 940px; 
+    margin: 0 auto; /* Centraliza o contêiner de cards na página */
+    padding-bottom: 20px; 
+    position: relative; 
+    overflow: hidden; 
+
+    display: grid;
+    /* Força 3 colunas, cada uma com 300px de largura. Os itens restantes quebrarão a linha. */
+    grid-template-columns: repeat(3, 300px); 
+    gap: 20px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza o bloco de grid dentro do max-width */
+    align-items: start; /* Alinha os itens ao topo do seu espaço de grid */
+}
+
+/* Estilo individual dos Cards de Evento */
+.swiper-slide.event-card {
+    width: 300px; /* Largura fixa para cada card */
+}
+
+.event-card {
+    background: var(--branco);
+    border: var(--borda-card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.event-card .event-link {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.event-card h3 {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--terra);
+    font-size: 1.6em;
+}
+
+.event-card p {
+    padding: 0;
+    margin-bottom: 1rem;
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+}
+
+.event-card .saiba-mais {
+    display: flex;
+    align-items: center;
+    color: var(--verde-agrinho);
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-top: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.event-card:hover .saiba-mais {
+    color: var(--destaque);
+}
+
+.event-card .saiba-mais i {
+    margin-left: 0.3rem;
+    font-size: 0.8em;
+    transition: margin-left 0.2s ease;
+}
+
+.event-card:hover .saiba-mais i {
+    margin-left: 0.6rem;
+}
+
+/* --- OCULTANDO AS SETAS E A PAGINAÇÃO DO SWIPER --- */
+/* Como o JavaScript foi removido, esses elementos não são funcionais e devem ser ocultados. */
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination {
+    display: none !important; 
+}
+
+/* --- Media Queries para o .event-carousel foram removidas para manter o layout fixo desejado --- */
+
+/* Tech Section */
+.tech-section {
+    padding: 4rem 0;
+}
+
+.tech-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tech-content img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    border: var(--borda-card);
+}
+
+/* Página Saiba Mais */
+.detailed-content {
+    padding: 4rem 0;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.detail-card {
+    background: var(--branco);
+    border: var(--borda-card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.detail-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.detail-card h3 {
+    padding: 1rem;
+    color: var(--terra);
+}
+
+.detail-card p {
+    padding: 0 1rem 1.5rem;
+}
+
+.back-button {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Botões Gerais */
+.btn {
+    display: inline-block;
+    background: var(--destaque);
+    color: var(--branco);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--laranja);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(to right, var(--terra), var(--cinza-texto));
+    color: var(--creme);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: var(--creme);
+    font-size: 1.5rem;
+}
+
+/* Botão Voltar ao Topo */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--destaque);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 1; /* Sempre visível */
+    z-index: 99;
+}
+
+/* Estilos para página de evento individual */
+.event-detail {
+    padding: 2rem 0;
+}
+
+.event-header {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.event-main-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.event-meta {
+    background: rgba(255,255,255,0.9);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: -2rem;
+    position: relative;
+    z-index: 2;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.event-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.attractions-list {
+    margin: 1.5rem 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+.attractions-list li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.attractions-list i {
+    color: var(--laranja);
+    width: 1.2rem;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.highlight-box {
+    background-color: rgba(139, 195, 74, 0.1);
+    border-left: 4px solid var(--verde-claro);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.highlight-box h4 {
+    color: var(--verde-agrinho);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.highlight-box i {
+    color: var(--laranja);
+}
+
+/* --- Responsividade Geral (mantida para outras seções) --- */
+@media (max-width: 992px) { 
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .tech-content {
+        flex-direction: column;
+    }
+    
+    .hero-banner {
+        height: 50vh;
+    }
+    
+    .event-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) { 
+    /* Esta seção de media query foi deixada em branco para o .event-carousel, */
+    /* pois a intenção é ter um layout fixo sem adaptações automáticas. */
+    /* Você pode adicionar regras específicas aqui se decidir quebrar o layout fixo em telas muito pequenas. */
+}
+
+@media (min-width: 768px) {
+    .tech-content {
+        flex-direction: row;
+    }
+    .header .container {
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+    }
+}
