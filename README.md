@@ -27,24 +27,8 @@ Projeto web educativo desenvolvido para o Concurso Agrinho 2025, com o objetivo 
 | Galeria responsiva | Fotos e vídeos das tradições |
 | Design adaptável | Mobile-first e acessível |
 
-### Estrutura
-agrinho-2025/
-├── index.html # Página inicial
-├── saiba-mais.html # Informações técnicas
-├── show-rural.html # Evento Show Rural
-├── style.css # Estilos principais
-└── eventos/ # Páginas de eventos
-├── caminho-vinho.html # Caminho do Vinho (Colombo)
-├── festa-pinhao.html # Festa do Pinhão (Lapa)
-├── leitao-pururuca.html # Leitão à Pururuca (Toledo)
-└── oktoberfest.html # Oktoberfest (São José dos Pinhais)
-
 ## 📝 Considerações Finais
-Este projeto demonstrou na prática como a tecnologia pode ser aliada na preservação cultural, atingindo mais de 80% dos objetivos propostos. Como próximos passos, planeja-se:
-
-- Adicionar realidade aumentada para visualização 3D de plantios
-- Implementar chatbot para tirar dúvidas sobre agricultura
-- Expandir para outras regiões do Paraná
+Este projeto permitiu compreender, na prática, como a tecnologia pode ser uma poderosa aliada na valorização das tradições rurais e na construção de pontes entre o campo e a cidade.
 
 ---
 
